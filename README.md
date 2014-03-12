@@ -1,7 +1,10 @@
 # PtvTimetable
 
-A ruby gem for interacting with the PTV timetable API.
+A ruby gem for interacting with the [PTV timetable API](https://www.data.vic.gov.au/raw_data/ptv-timetable-api/6056).
 
+## Usage
+
+To use this gem you will need to request a `devid` and `secret key`. Instructions on how to do this are available in the [API specificationn](https://www.data.vic.gov.au/raw_data/ptv-timetable-api/6056).
 
 ```ruby
 api = PtvTimetable::API.new('devid', 'secret_key')
@@ -38,9 +41,6 @@ Or install it yourself as:
 
     $ gem install ptv_timetable
 
-## Usage
-
-TODO: Write usage instructions here
 
 ## Contributing
 
@@ -50,6 +50,8 @@ TODO: Write usage instructions here
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-## Disclaimer
+## Disclaimer & Attribution
 
-This ruby gem and its developers are in no way affiliated with PTV. Any trademarks referred to are the property of their respective trademark holders. We declare no affiliation, sponsorship, nor any partnerships with any registered trademarks.
+This ruby gem and it's developers are in no way affiliated with Public Transport Victoria (PTV). Any trademarks referred to are the property of their respective trademark holders. We declare no affiliation, sponsorship, nor any partnerships with any registered trademarks.
+
+The API specification titled "Timetable API" was released under the Creative Commons license. I attribute this publication - _Source: Licensed from Public Transport Victoria under a Creative Commons Attribution 3.0 Australia Licence._
