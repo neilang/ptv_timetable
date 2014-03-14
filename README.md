@@ -24,6 +24,9 @@ api.broad_next_departures(PtvTimetable::BUS, 28905)
 # Specific next departures
 api.specific_next_departures(PtvTimetable::BUS, 5111, 2896, 28905, 515)
 
+# Search
+api.search('Alamein')
+
 ```
 
 
