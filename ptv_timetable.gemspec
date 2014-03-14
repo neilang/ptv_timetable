@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec", "~> 2.14.1"
+  spec.add_development_dependency "webmock", "~> 1.17.4"
 
   spec.add_dependency "httparty", "~> 0.13.0"
 end
