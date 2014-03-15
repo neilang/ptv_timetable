@@ -13,8 +13,7 @@ module PtvTimetable
       @secret_key = secret_key
     end
 
-    def health_check
-      timestamp = Time.now.utc.iso8601
+    def health_check(timestamp=Time.now.utc.iso8601)
       signed_request("/v2/healthcheck?timestamp=#{timestamp}")
     end
 

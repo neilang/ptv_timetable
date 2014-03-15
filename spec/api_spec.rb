@@ -11,9 +11,8 @@ describe PtvTimetable::API do
   end
 
   it 'can request a health check' do
-    Time.stub(:now) { Time.new(0) }
-    stub = stub_request(:get, "http://timetableapi.ptv.vic.gov.au/v2/healthcheck?devid=devid&signature=1306C7D86586C5A3AABECB58581C7CF2A1D4638E&timestamp=-0001-12-31T14:00:00Z")
-    subject.health_check
+    stub = stub_request(:get, "http://timetableapi.ptv.vic.gov.au/v2/healthcheck?devid=devid&signature=3258AF3DE4CB58FD54F13445D149560B6E9B923C&timestamp=2013-11-13T05:24:25Z")
+    subject.health_check('2013-11-13T05:24:25Z')
     stub.should have_been_requested
   end
 
@@ -42,9 +41,8 @@ describe PtvTimetable::API do
   end
 
   it 'can lookup specific next departures' do
-    Time.stub(:now) { Time.new(0) }
-    stub = stub_request(:get, "http://timetableapi.ptv.vic.gov.au/v2/mode/2/line/5111/stop/2896/directionid/28905/departures/all/limit/515?devid=devid&for_utc=-0001-12-31T14:00:00Z&signature=04CBABE713BA7F5176406FFE039961A643CE64E7")
-    subject.specific_next_departures(PtvTimetable::BUS, 5111, 2896, 28905, 515)
+    stub = stub_request(:get, "http://timetableapi.ptv.vic.gov.au/v2/mode/2/line/5111/stop/2896/directionid/28905/departures/all/limit/515?devid=devid&for_utc=2013-11-13T05:24:25Z&signature=F373732C2A31DE7B3053FE26D3C5C8449F1C980A")
+    subject.specific_next_departures(PtvTimetable::BUS, 5111, 2896, 28905, 515, '2013-11-13T05:24:25Z')
     stub.should have_been_requested
   end
 
