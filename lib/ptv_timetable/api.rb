@@ -41,6 +41,10 @@ module PtvTimetable
       signed_request("/v2/mode/#{mode}/line/#{line}/stop/#{stop}/directionid/#{direction}/departures/all/limit/#{limit}?for_utc=#{utc}")
     end
 
+    def stopping_pattern(mode, run, stop, utc=Time.now.utc.iso8601)
+      signed_request("/v2/mode/#{mode}/run/#{run}/stop/#{stop}/stopping-pattern?for_utc=#{utc}")
+    end
+
     private
 
     def signed_request(request_path)

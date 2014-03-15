@@ -48,4 +48,11 @@ describe PtvTimetable::API do
     stub.should have_been_requested
   end
 
+  it 'can lookup a stopping pattern' do
+    Time.stub(:now) { Time.new(0) }
+    stub = stub_request(:get, "http://timetableapi.ptv.vic.gov.au/v2/mode/2/run/1464/stop/1108/stopping-pattern?devid=devid&for_utc=2013-11-13T05:24:25Z&signature=345F61EE77EFD7D25E56672D84CFC1D37C794EF5")
+    subject.stopping_pattern(PtvTimetable::BUS, 1464, 1108, '2013-11-13T05:24:25Z')
+    stub.should have_been_requested
+  end
+
 end

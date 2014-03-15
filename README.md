@@ -68,7 +68,13 @@ For example, if the stop is Camberwell Station, Specific Next Departures returns
 api.specific_next_departures(PtvTimetable::BUS, 5111, 2896, 28905, 515)
 ```
 
+### Stopping Pattern
 
+The Stopping Pattern API returns the stopping pattern for a specific run (i.e. transport service) from a prescribed stop at a prescribed time. The stopping pattern is comprised of timetable values ordered by stopping order.
+
+```ruby
+api.stopping_pattern(PtvTimetable::BUS, 1464, 1108, '2013-11-13T05:24:25Z')
+```
 
 ## Installation
 
