@@ -76,6 +76,15 @@ The Stopping Pattern API returns the stopping pattern for a specific run (i.e. t
 api.stopping_pattern(PtvTimetable::BUS, 1464, 1108, '2013-11-13T05:24:25Z')
 ```
 
+### Stops on a Line
+
+The Stops on a Line API returns a list of all the stops for a requested line, ordered by location name.
+
+```ruby
+api.line_stops(PtvTimetable::BUS, 1464, 1108, '2013-11-13T05:24:25Z')
+
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:
