@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["neilang@gmail.com"]
   spec.summary       = %q{A ruby gem for interacting with the PTV timetable API.}
   spec.description   = %q{A ruby gem for interacting with the PTV timetable API.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/neilang/ptv_timetable"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
