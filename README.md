@@ -81,7 +81,7 @@ api.stopping_pattern(PtvTimetable::BUS, 1464, 1108, '2013-11-13T05:24:25Z')
 The Stops on a Line API returns a list of all the stops for a requested line, ordered by location name.
 
 ```ruby
-api.line_stops(PtvTimetable::BUS, 1464, 1108, '2013-11-13T05:24:25Z')
+api.line_stops(PtvTimetable::BUS, 1818)
 
 ```
 

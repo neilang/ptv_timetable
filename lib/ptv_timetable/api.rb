@@ -54,7 +54,7 @@ module PtvTimetable
     def signed_request(request_path)
       request_path += (request_path.include?('?') ? '&' : '?') + "devid=#{@devid}"
       signature = Digest::HMAC.hexdigest(request_path, @secret_key, Digest::SHA1).upcase
-      self.class.get "#{request_path}&signature=#{signature}"
+      self.class.get("#{request_path}&signature=#{signature}").parsed_response
     end
 
   end
