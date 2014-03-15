@@ -6,28 +6,68 @@ A ruby gem for interacting with the [PTV timetable API](https://www.data.vic.gov
 
 To use this gem you will need to request a `devid` and `secret key`. Instructions on how to do this are available in the [API specificationn](https://www.data.vic.gov.au/raw_data/ptv-timetable-api/6056).
 
+
+For all API calls you will need a valid _devid_ and _secret_key_.
+
 ```ruby
 api = PtvTimetable::API.new('devid', 'secret_key')
 
-# Check status of API
-api.health_check
-
-# Stops nearby
-api.near_me(-37.82392124423254, 144.9462017431463)
-
-# POI
-api.points_of_interest(-37.82205143151239, 144.9779160007277, -37.81393456848758, 144.9859159992726)
-
-# Broad next departures
-api.broad_next_departures(PtvTimetable::BUS, 28905)
-
-# Specific next departures
-api.specific_next_departures(PtvTimetable::BUS, 5111, 2896, 28905, 515)
-
-# Search
-api.search('Alamein')
-
 ```
+
+### Health Check
+
+The Health Check will test a number of the key services that deliver the PTV Timetable API and let you know if there are any problems with connectivity, availability or reachability.
+
+```ruby
+api.health_check
+```
+
+N.B. Calling the Health Check API at the start of each sequence of APIs flushes out any system problems.
+
+### Stops Nearby
+
+Stops Nearby returns up to 30 stops nearest to a specified coordinate.
+
+```ruby
+api.near_me(-37.82392124423254, 144.9462017431463)
+```
+
+### Transport POIs by Map
+
+Transport POIs by Map returns a set of locations consisting of stops and/or myki ticket outlets (collectively known as points of interest) within a region demarcated on a map through a set of latitude and longitude coordinates.
+
+```ruby
+api.points_of_interest(-37.82205143151239, 144.9779160007277, -37.81393456848758, 144.9859159992726)
+```
+
+### Search
+
+The Search API returns all stops and lines that match the input search text.
+
+```ruby
+api.search('Alamein')
+```
+
+### Broad Next Departures
+
+Broad Next Departures returns the next departure times at a prescribed stop irrespective of the line and direction of the service.
+
+For example, if the stop is Camberwell Station, Broad Next Departures will return the times for all three lines (Belgrave, Lilydale and Alamein) running in both directions (towards the city and away from the city).
+
+```ruby
+api.broad_next_departures(PtvTimetable::BUS, 28905)
+```
+
+# Specific Next Departures
+
+Specific Next Departures returns the times for the next departures at a prescribed stop for a specific mode, line and direction.
+
+For example, if the stop is Camberwell Station, Specific Next Departures returns only the times
+
+```ruby
+api.specific_next_departures(PtvTimetable::BUS, 5111, 2896, 28905, 515)
+```
+
 
 
 ## Installation
