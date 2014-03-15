@@ -1,4 +1,4 @@
-# PtvTimetable
+# PtvTimetable [![Build Status](https://secure.travis-ci.org/neilang/ptv_timetable.png?branch=master)](https://travis-ci.org/neilang/ptv_timetable)
 
 A ruby gem for interacting with the [PTV timetable API](https://www.data.vic.gov.au/raw_data/ptv-timetable-api/6056).
 
