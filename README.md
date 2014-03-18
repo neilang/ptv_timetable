@@ -81,7 +81,6 @@ The Stops on a Line API returns a list of all the stops for a requested line, or
 
 ```ruby
 api.line_stops(PtvTimetable::BUS, 1818)
-
 ```
 
 ## Installation
