@@ -11,7 +11,6 @@ For all API calls you will need a valid _devid_ and _secret_key_.
 
 ```ruby
 api = PtvTimetable::API.new('devid', 'secret_key')
-
 ```
 
 ### Health Check
