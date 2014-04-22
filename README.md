@@ -37,7 +37,12 @@ Transport POIs by Map returns a set of locations consisting of stops and/or myki
 
 ```ruby
 api.points_of_interest(-37.82205143151239, 144.9779160007277, -37.81393456848758, 144.9859159992726)
+
+# Or just myki ticket outlets
+api.points_of_interest(-37.82205143151239, 144.9779160007277, -37.81393456848758, 144.9859159992726, PtvTimetable::TICKET_OUTLET)
 ```
+
+
 
 ### Search
 

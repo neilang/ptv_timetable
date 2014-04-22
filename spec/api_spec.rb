@@ -23,8 +23,14 @@ describe PtvTimetable::API do
   end
 
   it 'can find points of interest' do
-    stub = stub_request(:get, "http://timetableapi.ptv.vic.gov.au/v2/poi/0,1,2,3,4,100/lat1/-37.82205143151239/long1/144.9779160007277/lat2/-37.81393456848758/long2/-37.81393456848758/griddepth/0/limit/30?devid=devid&signature=4F47D54EEFAB29E4BBC20490A981469E3742D22F")
+    stub = stub_request(:get, "http://timetableapi.ptv.vic.gov.au/v2/poi/0,1,2,3,4,100/lat1/-37.82205143151239/long1/144.9779160007277/lat2/-37.81393456848758/long2/144.9859159992726/griddepth/0/limit/30?devid=devid&signature=02B931B1374991FD58789AA08B31D12AD57E8FB0")
     subject.points_of_interest(-37.82205143151239, 144.9779160007277, -37.81393456848758, 144.9859159992726)
+    stub.should have_been_requested
+  end
+
+  it 'can find just ticket outlets as a points of interest' do
+    stub = stub_request(:get, "http://timetableapi.ptv.vic.gov.au/v2/poi/100/lat1/-37.82205143151239/long1/144.9779160007277/lat2/-37.81393456848758/long2/144.9859159992726/griddepth/0/limit/30?devid=devid&signature=C619E84578022C947AC3EFB45129B76DE65C681E")
+    subject.points_of_interest(-37.82205143151239, 144.9779160007277, -37.81393456848758, 144.9859159992726, PtvTimetable::TICKET_OUTLET)
     stub.should have_been_requested
   end
 
