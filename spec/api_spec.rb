@@ -23,7 +23,7 @@ describe PtvTimetable::API do
   end
 
   it 'can find points of interest' do
-    stub = stub_request(:get, "http://timetableapi.ptv.vic.gov.au/v2/poi/0,1,2,3,4,100/lat1/-37.82205143151239/long1/144.9779160007277/lat2/-37.81393456848758/long2/-37.81393456848758/griddepth/3/limit/6?devid=devid&signature=F94A5E7774028E67B6684B17E1C49886C5BEFBC9")
+    stub = stub_request(:get, "http://timetableapi.ptv.vic.gov.au/v2/poi/0,1,2,3,4,100/lat1/-37.82205143151239/long1/144.9779160007277/lat2/-37.81393456848758/long2/-37.81393456848758/griddepth/0/limit/30?devid=devid&signature=4F47D54EEFAB29E4BBC20490A981469E3742D22F")
     subject.points_of_interest(-37.82205143151239, 144.9779160007277, -37.81393456848758, 144.9859159992726)
     stub.should have_been_requested
   end

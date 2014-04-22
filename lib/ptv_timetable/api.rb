@@ -23,8 +23,8 @@ module PtvTimetable
 
     def points_of_interest(latitude1, longitude1, latitude2, longitude2)
       poi        = '0,1,2,3,4,100'
-      grid_depth = 3
-      limit      = 6
+      grid_depth = 0
+      limit      = 30
       signed_request("/v2/poi/#{poi}/lat1/#{latitude1}/long1/#{longitude1}/lat2/#{latitude2}/long2/#{latitude2}/griddepth/#{grid_depth}/limit/#{limit}")
     end
 
